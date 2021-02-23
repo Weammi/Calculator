@@ -58,6 +58,14 @@ public class SimpleCalculator implements NumberOfVisits {
         history.printHistory();
     }
 
+    public void saveHistory(){
+        history.saveFullHistory();
+    }
+
+    public void saveFullHistory(){
+        history.printFullHistory();
+    }
+
     @Override
     public void nubmerOfVisits(int nubmer) {
         this.simpleNubmer=simpleNubmer+nubmer;
