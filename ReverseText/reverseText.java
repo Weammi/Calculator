@@ -3,8 +3,6 @@ package ReverseText;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Scanner;
 
 public class reverseText {
@@ -41,26 +39,18 @@ public class reverseText {
         } catch (IOException e) {
             e.printStackTrace();
         }
-//        ArrayList<String> myArray = new ArrayList<>();
         String[] myArray= new String[14];
         try {
             Scanner readText = new Scanner(myText);
             int i=0;
             while (readText.hasNextLine()){
                 String data = readText.nextLine();
-//                System.out.println(data);
                 myArray[i++]=data;
-//              myArray.add(data);
             }
         } catch (Exception e) {
             System.out.println("Произошла ошибка");
             e.printStackTrace();
         }
-//        Collections.sort(myArray, Collections.reverseOrder());
-//        System.out.println("\n"+"Испаравленный текст"+"\n");
-//        for(String str: myArray){
-//            System.out.println(str);
-//        }
         int i, j;
         String temp;
         for(i=0, j=(myArray.length-1); i<=j; i++, j--){
