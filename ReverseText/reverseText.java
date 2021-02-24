@@ -41,23 +41,39 @@ public class reverseText {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        ArrayList<String> myArray = new ArrayList<>();
+//        ArrayList<String> myArray = new ArrayList<>();
+        String[] myArray= new String[14];
         try {
             Scanner readText = new Scanner(myText);
+            int i=0;
             while (readText.hasNextLine()){
                 String data = readText.nextLine();
-                System.out.println(data);
-                myArray.add(data);
+//                System.out.println(data);
+                myArray[i++]=data;
+//              myArray.add(data);
             }
         } catch (Exception e) {
             System.out.println("Произошла ошибка");
             e.printStackTrace();
         }
-
-        Collections.sort(myArray, Collections.reverseOrder());
-        System.out.println("\n"+"Испаравленный текст"+"\n");
-        for(String str: myArray){
-            System.out.println(str);
+//        Collections.sort(myArray, Collections.reverseOrder());
+//        System.out.println("\n"+"Испаравленный текст"+"\n");
+//        for(String str: myArray){
+//            System.out.println(str);
+//        }
+        int i, j;
+        String temp;
+        for(i=0, j=(myArray.length-1); i<=j; i++, j--){
+            temp = myArray[i];
+            myArray[i] = myArray[j];
+            myArray[j] = temp;
+            System.out.println(myArray[i]);
+        }
+        for(i=myArray.length-1, j=0 ; i>=j; i--, j++){
+            temp = myArray[i];
+            myArray[i] = myArray[j];
+            myArray[j] = temp;
+            System.out.println(myArray[j]);
         }
     }
 }
